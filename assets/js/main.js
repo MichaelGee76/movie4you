@@ -29,12 +29,17 @@ function showMovies(array) {
 }
 
 function findMovie() {
-    const searchBarValue = document.querySelector(".searchBar").value;
+    const searchBarValue = document.querySelector(".searchBar").value.toLowerCase();
     const foundMovies = movies.filter((result) => {
-        return result.includes(searchBarValue);
+        return result[0].toLowerCase().includes(searchBarValue), result[1].toLowerCase().includes(searchBarValue);
     });
     outputContainer.innerHTML = "";
     showMovies(foundMovies);
+    const foundMoviesGenre = movies.filter((result) => {
+        return result[4].includes(searchBarValue);
+    });
+    // console.log(foundMoviesGenre[0]);
+    showMovies(foundMoviesGenre);
 }
 
 // const output = foundMovies.map((tile) => {
@@ -47,8 +52,3 @@ function findMovie() {
 //     <p class="rating">${tile[5]}</p>
 //     </div>`;
 // });
-
-// const foundMoviesGenre = movies[4].filter((result) => {
-//     return result.includes(searchBarValue);
-// });
-// showMovies(foundMoviesGenre);

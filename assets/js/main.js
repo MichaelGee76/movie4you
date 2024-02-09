@@ -1,4 +1,4 @@
-console.log(movies[0][4].length);
+let newMovies = movies;
 
 const outputContainer = document.querySelector(".output");
 
@@ -15,6 +15,8 @@ const output = movies.map((tile) => {
     </div>`;
 });
 
+// Die Funktion wird mit Parameter übergeben und baut die Kacheln mit dem gefilterten Array auf
+
 function showMovies(array) {
     array.map((tile) => {
         outputContainer.innerHTML += `<div class="tile">
@@ -28,27 +30,41 @@ function showMovies(array) {
     });
 }
 
+// Das ist de Suchfunktion, erstellt ein Array und baut mit showMovies() das html auf
+
 function findMovie() {
     const searchBarValue = document.querySelector(".searchBar").value.toLowerCase();
-    const foundMovies = movies.filter((result) => {
-        return result[0].toLowerCase().includes(searchBarValue), result[1].toLowerCase().includes(searchBarValue);
+    newMovies = movies.filter((result) => {
+        return result[0].toLowerCase().includes(searchBarValue) || result[1].includes(searchBarValue) || result[2].toLowerCase().includes(searchBarValue) || result[3].toLowerCase().includes(searchBarValue) || result[4].join().toLowerCase().includes(searchBarValue) || result[5] === searchBarValue;
     });
     outputContainer.innerHTML = "";
-    showMovies(foundMovies);
-    const foundMoviesGenre = movies.filter((result) => {
-        return result[4].includes(searchBarValue);
-    });
-    // console.log(foundMoviesGenre[0]);
-    showMovies(foundMoviesGenre);
+    showMovies(newMovies);
 }
 
-// const output = foundMovies.map((tile) => {
-//     outputContainer.innerHTML += `<div class="tile">
-//     <h2>${tile[0]}</h2>
-//     <h4>${tile[1]}</h4>
-//     <h3>${tile[2]}</h3>
-//     <p class="duration">${tile[3]}</p>
-//     <p>${tile[4].map((genre) => genre).join(`<br>`)}</p>
-//     <p class="rating">${tile[5]}</p>
-//     </div>`;
-// });
+// Soriert nach jahr aufsteigend
+
+function yearUp() {
+    newMovies.sort((a, b) => {
+        return a[1] - b[1];
+    });
+    outputContainer.innerHTML = "";
+    showMovies(newMovies);
+}
+
+// sortiert nach jahr absteigend
+
+function yearDown() {
+    newMovies.sort((a, b) => {
+        return b[1] - a[1];
+    });
+    outputContainer.innerHTML = "";
+    showMovies(newMovies);
+}
+
+function bestRate() {
+    newMovies.sort((a, b) => {
+        return b[5] - a[5];
+    });
+    outputContainer.innerHTML = "";
+    showMovies(newMovies);
+}

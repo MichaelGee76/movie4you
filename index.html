@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Movies4You</title>
+    </head>
+    <body>
+        <header>
+            <h1>Movies4You</h1>
+            <h5>The best MovieDB</h5>
+        </header>
+        <section class="search">
+            <div class="containerSearch">
+                <form action="" onsubmit="return false">
+                    <input type="text" class="searchBar" />
+                    <input type="button" value="Search" onclick="findMovie()" />
+                </form>
+                <div class="innerContainer">
+                    <button onclick="yearUp(result)">Year Up</button>
+                    <button onclick="yearDown()">Year Down</button>
+                    <button onclick="bestRate()">Best Rate</button>
+                </div>
+            </div>
+        </section>
+        <section class="output"></section>
+        <script src="./assets/js/movieDb.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

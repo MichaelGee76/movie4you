@@ -6,7 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: ;
+    font-family: OpenSans;
 }
 
 html {
@@ -22,7 +22,7 @@ a {
 }
 
 h1 {
-    font-size: clamp(5rem, 5vw, 7rem);
+    font-size: clamp(8rem, 6vw, 12rem);
 }
 h2 {
     font-size: clamp(3rem, 4vw, 4.8rem);
@@ -34,7 +34,7 @@ h4 {
     font-size: clamp(2.8rem, 3.2vw, 3.8rem);
 }
 h5 {
-    font-size: clamp(2.5rem, 3vw, 3.2rem);
+    font-size: clamp(4rem, 4vw, 5.5rem);
 }
 h6 {
     font-size: clamp(1.6rem, 2.5vw, 1.8rem);
@@ -47,6 +47,11 @@ a,
 li {
     font-size: clamp(2rem, 2vw, 2rem);
 }
+
+.wrapper {
+    background-color: black;
+}
+
 /* Header */
 
 header {
@@ -54,11 +59,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5vw;
+    padding-top: 5vw;
 }
 
 h1,
 h5 {
+    color: #e6b325;
     margin-bottom: 1.5rem;
 }
 
@@ -84,12 +90,19 @@ form {
 
 form input:first-of-type {
     width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 0.5rem;
 }
 
 form input:last-of-type {
     width: 25%;
+    border-radius: 5px;
 }
-
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
 form .innerContainer {
     display: flex;
     justify-content: space-between;
@@ -102,24 +115,55 @@ form .innerContainer {
 
 button {
     width: 30%;
+    border-radius: 5px;
 }
 
 /* #################### Output ################### */
 
 .output {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 3fr));
+
+    gap: 2rem;
     width: 90%;
     margin: auto;
 }
 
 .tile {
-    background-color: aqua;
+    background-color: #a87c7c;
+    background-color: #232d3f;
     display: flex;
     flex-direction: column;
+    grid-auto-rows: 1fr;
     text-align: center;
     gap: 1rem;
+
     padding: 2rem;
     border-radius: 10px;
+    border: 1px solid #e6b325;
+}
+
+.tile h2 {
+    color: #e6b325;
+    margin-bottom: 1rem;
+}
+
+.tile h3 {
+    color: #e6b325;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    font-weight: 700;
+    font-size: clamp(3rem, 3.5vw, 4rem);
+}
+
+/* ################### Footer ##################### */
+
+footer {
+    padding: 3rem;
+}
+
+footer p {
+    color: white;
 }

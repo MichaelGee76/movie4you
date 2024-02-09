@@ -41,7 +41,7 @@ function findMovie() {
     showMovies(newMovies);
 }
 
-// Soriert nach jahr aufsteigend
+// Sortiert nach jahr aufsteigend
 
 function yearUp() {
     newMovies.sort((a, b) => {

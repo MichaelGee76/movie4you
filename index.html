@@ -6,26 +6,31 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <title>Movies4You</title>
     </head>
-    <body>
-        <header>
-            <h1>Movies4You</h1>
-            <h5>The best MovieDB</h5>
-        </header>
-        <section class="search">
-            <div class="containerSearch">
-                <form action="" onsubmit="return false">
-                    <input type="text" class="searchBar" />
-                    <input type="button" value="Search" onclick="findMovie()" />
-                </form>
-                <div class="innerContainer">
-                    <button onclick="yearUp()">Year Up</button>
-                    <button onclick="yearDown()">Year Down</button>
-                    <button onclick="bestRate()">Best Rate</button>
+    <div class="wrapper">
+        <body>
+            <header>
+                <h1>Movies4You</h1>
+                <h5>The best MovieDB</h5>
+            </header>
+            <section class="search">
+                <div class="containerSearch">
+                    <form action="" onsubmit="return false">
+                        <input type="text" class="searchBar" />
+                        <input type="button" value="Search" onclick="findMovie()" />
+                    </form>
+                    <div class="innerContainer">
+                        <button onclick="yearUp()" id="up" value="up">Year Up</button>
+                        <button onclick="yearDown()" id="down" value="down">Year Down</button>
+                        <button onclick="bestRate()" id="rate" value="rate">Best Rate</button>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="output"></section>
-        <script src="./assets/js/movieDb.js"></script>
-        <script src="./assets/js/main.js"></script>
-    </body>
+            </section>
+            <section class="output"></section>
+            <script src="./assets/js/movieDb.js"></script>
+            <script src="./assets/js/main.js"></script>
+            <footer>
+                <p>Made by hand &copy; Michael Gee 02/24</p>
+            </footer>
+        </body>
+    </div>
 </html>

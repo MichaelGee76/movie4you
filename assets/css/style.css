@@ -143,6 +143,10 @@ button {
     border: 1px solid #e6b325;
 }
 
+.tile:hover {
+    filter: invert(0.05);
+}
+
 .tile h2 {
     color: #e6b325;
     margin-bottom: 1rem;
@@ -151,6 +155,20 @@ button {
 .tile h3 {
     color: #e6b325;
     margin-bottom: 1rem;
+}
+
+.tile h2:hover,
+.tile h4:hover,
+.tile h3:hover,
+.tile p:hover {
+    transition: 500ms;
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.tile p:hover,
+.tile h4:hover {
+    filter: invert(1);
 }
 
 .rating {
@@ -165,5 +183,12 @@ footer {
 }
 
 footer p {
+    padding: 5rem;
+    text-align: center;
     color: white;
+}
+
+.spanRed {
+    transition: 300ms;
+    color: red;
 }
